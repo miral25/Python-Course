@@ -1,0 +1,22 @@
+'''In this assignment you will read through and parse a file with text and numbers. 
+You will extract all the numbers in the file and compute the sum of the numbers. '''
+
+import re
+
+file = open('r.txt')
+
+numlist = list()
+
+for line in file:
+    line.rstrip()
+    num = re.findall('[0-9]+',line)
+    numlist = numlist + num
+    
+sum = 0
+for i in numlist:
+    sum = sum + int(i)
+    
+print("Sum: ",sum)
+
+# Output:
+# Sum:  307207
